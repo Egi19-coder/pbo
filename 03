@@ -1,0 +1,37 @@
+class Mahasiswa {
+  constructor(nama, nim, jurusan) {
+    this.nama = nama;
+    this.nim = nim;
+    this.jurusan = jurusan;
+  }
+
+  belajar() {
+    console.log(this.nama + " sedang belajar.");-
+  }
+
+  info() {
+    console.log(`Nama: ${this.nama}, NIM: ${this.nim}, Jurusan: ${this.jurusan}`);
+  }
+}
+
+class MahasiswaS1 extends Mahasiswa {
+  ujian() {
+    console.log(this.nama + " sedang ujian skripsi.");
+  }
+}
+
+class MahasiswaS2 extends Mahasiswa {
+  tugas() {
+    console.log(this.nama + " sedang mengerjakan tugas penelitian.");
+  }
+}
+
+const mhs1 = new Mahasiswa("egi", "12345", "Informatika");
+const mhs2 = new MahasiswaS1("agung", "112233", "Sistem Informasi");
+const mhs3 = new MahasiswaS2("danang", "332211", "rekayasa perangkat lunak");
+
+mhs1.belajar();   
+mhs1.info();     
+
+mhs2.ujian();    
+mhs3.tugas();    
