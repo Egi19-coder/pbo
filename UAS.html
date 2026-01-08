@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Music App Login</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background: #ffffff;
+      padding: 40px 30px;
+      width: 360px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #6a11cb;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: 1px solid #6a11cb;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #2575fc;
+      box-shadow: 0 0 5px #2575fc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    #loginBtn {
+      background-color: #6a11cb;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    #loginBtn:hover {
+      background-color: #5311a8;
+    }
+
+    #cancelBtn {
+      background-color: #eee;
+      color: #6a11cb;
+    }
+
+    #cancelBtn:hover {
+      background-color: #ddd;
+    }
+
+    #logoutBtn {
+      background-color: #ff5c5c;
+      color: white;
+    }
+
+    .dashboard {
+      text-align: center;
+    }
+
+    .music-list {
+      text-align: left;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .music-list li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-container" id="app"></div>
+
+<script>
+class MusicLoginApp {
+  constructor(containerId) {
+    this.container = document.getElementById(containerId);
+    this.initData();
+    this.renderLogin();
+  }
+
+  initData() {
+    if (!localStorage.getItem('musicUsers')) {
+      const users = [
+        { username: 'admin', password: 'admin123' },
+        { username: 'musiclover', password: 'lagu123' }
+      ];
+      localStorage.setItem('musicUsers', JSON.stringify(users));
+    }
+  }
+
+  renderLogin() {
+    this.container.innerHTML = `
+      <h2>🎵 Music App</h2>
+      <div class="subtitle">Masuk ke akun musik kamu</div>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button id="loginBtn">Login</button>
+      <button id="cancelBtn">Batal</button>
+    `;
+
+    document.getElementById('loginBtn')
+      .addEventListener('click', () => this.login());
+    document.getElementById('cancelBtn')
+      .addEventListener('click', () => this.cancel());
+  }
+
+  login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    const users = JSON.parse(localStorage.getItem('musicUsers'));
+    const found = users.find(
+      user => user.username === username && user.password === password
+    );
+
+    if (!found) {
+      alert('Username atau password salah!');
+    } else {
+      this.renderDashboard(username);
+    }
+  }
+
+  renderDashboard(username) {
+    this.container.innerHTML = `
+      <div class="dashboard">
+        <h2>🎧 Selamat Datang</h2>
+        <p>Halo <strong>${username}</strong>, selamat menikmati musik!</p>
+
+        <ul class="music-list">
+          <li> Pop Hits Indonesia</li>
+          <li> Rock Klasik</li>
+          <li> Jazz Santai</li>
+          <li> Top Global Chart</li>
+        </ul>
+
+        <button id="logoutBtn">Logout</button>
+      </div>
+    `;
+
+    document.getElementById('logoutBtn')
+      .addEventListener('click', () => this.logout());
+  }
+
+  logout() {
+    this.renderLogin();
+  }
+
+  cancel() {
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+  }
+}
+
+new MusicLoginApp('app');
+</script>
+
+</body>
+</html>
