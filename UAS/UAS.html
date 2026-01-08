@@ -2,12 +2,12 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>UAS Login Pixel Estetik</title>
+<title>UAS Login Pixel Ocean</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
-/* ===== BODY : PIXEL WORLD ===== */
+/* ===== BODY : PIXEL OCEAN ===== */
 body {
   font-family: 'Press Start 2P', cursive;
   margin: 0;
@@ -17,47 +17,46 @@ body {
   align-items: center;
 
   background:
-    /* CLOUD LAYER 1 */
+    /* CLOUDS */
     repeating-linear-gradient(
       90deg,
-      rgba(255,255,255,0.6) 0 18px,
-      transparent 18px 60px
-    ) 0 60px / 260px 40px no-repeat,
+      rgba(255,255,255,0.5) 0 20px,
+      transparent 20px 60px
+    ) 0 60px / 240px 40px no-repeat,
 
-    /* CLOUD LAYER 2 */
-    repeating-linear-gradient(
-      90deg,
-      rgba(255,255,255,0.35) 0 14px,
-      transparent 14px 80px
-    ) 0 120px / 320px 30px no-repeat,
-
-    /* MOUNTAIN */
+    /* SKY */
     linear-gradient(
+      #8FD3FF 0%,
+      #6FB8FF 40%,
+      #5AAEFF 48%,
+      #1E90FF 52%
+    ),
+
+    /* OCEAN DEPTH */
+    linear-gradient(
+      #1E90FF 0%,
+      #1C7ED6 25%,
+      #1668B2 50%,
+      #0E4A7B 75%,
+      #082F4D 100%
+    ),
+
+    /* LIGHT REFLECTION */
+    repeating-linear-gradient(
       135deg,
-      transparent 45%,
-      #6B6B6B 45% 55%,
-      transparent 55%
-    ) bottom / 100% 40% no-repeat,
-
-    /* SKY + GROUND */
-    linear-gradient(
-      #78C9FF 0%,
-      #78C9FF 45%,
-      #6ECF68 45%,
-      #6ECF68 52%,
-      #8B5A2B 52%,
-      #8B5A2B 100%
+      rgba(255,255,255,0.15) 0 6px,
+      transparent 6px 14px
     ),
 
     /* PIXEL GRID */
     repeating-linear-gradient(
       0deg,
-      rgba(0,0,0,0.08) 0 1px,
+      rgba(255,255,255,0.05) 0 1px,
       transparent 1px 16px
     ),
     repeating-linear-gradient(
       90deg,
-      rgba(0,0,0,0.08) 0 1px,
+      rgba(255,255,255,0.05) 0 1px,
       transparent 1px 16px
     );
 
@@ -66,17 +65,17 @@ body {
 
 /* ===== LOGIN BOX ===== */
 .login-container {
-  background-color: rgba(120, 72, 32, 0.95);
+  background-color: rgba(10, 40, 70, 0.92);
   padding: 26px;
   width: 340px;
-  border: 4px solid #2E1C10;
+  border: 4px solid #001F3F;
   box-shadow: 8px 8px 0 #000;
 }
 
 /* ===== TITLE ===== */
 .login-container h2 {
   text-align: center;
-  color: #00FF66;
+  color: #66FFCC;
   font-size: 14px;
   margin-bottom: 22px;
 }
@@ -87,7 +86,7 @@ body {
   padding: 10px;
   margin-bottom: 14px;
   border: 3px solid #000;
-  background-color: #C9F2C9;
+  background-color: #D0F0FF;
   font-size: 10px;
 }
 
@@ -99,11 +98,11 @@ body {
   font-size: 10px;
   cursor: pointer;
   box-shadow: 4px 4px 0 #000;
-  background-color: #3CB371;
+  background-color: #20B2AA;
 }
 
 .login-container button:hover {
-  background-color: #2E8B57;
+  background-color: #159A90;
 }
 
 /* ===== INFO ===== */
@@ -111,7 +110,7 @@ body {
   display: none;
   margin-top: 16px;
   padding: 14px;
-  background-color: #9AD9FF;
+  background-color: #87CEFA;
   border: 3px solid #000;
   text-align: center;
   font-size: 10px;
