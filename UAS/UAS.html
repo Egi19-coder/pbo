@@ -1,10 +1,16 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Pixel Minecraft Login</title>
+
+<!-- FONT PIXEL -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 body {
   font-family: 'Press Start 2P', cursive;
-  background-color: #7EC850;
+  background-color: #7EC850; /* grass */
   margin: 0;
   min-height: 100vh;
   display: flex;
@@ -12,39 +18,35 @@ body {
   align-items: center;
 }
 
-
+/* LOGIN BOX */
 .login-container {
-  background-color: #8B5A2B; 
+  background-color: #8B5A2B; /* dirt */
   padding: 25px;
   width: 320px;
   border: 4px solid #3B2F1E;
   box-shadow: 6px 6px 0 #000;
 }
 
-
+/* TITLE */
 .login-container h2 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #00FF00; 
+  color: #00FF00;
   font-size: 14px;
+  margin-bottom: 20px;
 }
 
-
+/* INPUT */
 .login-container input {
   width: 100%;
   padding: 10px;
   margin-bottom: 12px;
   border: 3px solid #000;
-  background-color: #C2F0C2; 
+  background-color: #C2F0C2;
   font-size: 10px;
   outline: none;
 }
 
-.login-container input:focus {
-  background-color: #A8E6A3;
-}
-
-
+/* BUTTON */
 .login-container button {
   width: 100%;
   padding: 10px;
@@ -52,31 +54,16 @@ body {
   font-size: 10px;
   cursor: pointer;
   box-shadow: 4px 4px 0 #000;
-}
-
-
-#loginBtn {
   background-color: #4CAF50;
-  color: #000;
-  margin-bottom: 10px;
 }
 
-#loginBtn:hover {
+.login-container button:hover {
   background-color: #3E8E41;
 }
 
-
-#cancelBtn {
-  background-color: #D32F2F; 
-  color: #FFF;
-}
-
-#cancelBtn:hover {
-  background-color: #B71C1C;
-}
-
-
+/* USER INFO */
 .user-info {
+  display: none;
   margin-top: 15px;
   padding: 15px;
   background-color: #87CEEB;
@@ -85,3 +72,37 @@ body {
   font-size: 10px;
 }
 </style>
+</head>
+
+<body>
+
+<div class="login-container">
+  <h2>PLAYER LOGIN</h2>
+
+  <input type="text" id="username" placeholder="USERNAME">
+  <input type="password" id="password" placeholder="PASSWORD">
+
+  <button onclick="login()">LOGIN</button>
+
+  <div class="user-info" id="userInfo">
+    <p>LOGIN BERHASIL</p>
+    <p>WELCOME PLAYER</p>
+  </div>
+</div>
+
+<script>
+function login() {
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+
+  if (user === "egi ardiyansah" && pass === "12345") {
+    document.getElementById("userInfo").style.display = "block";
+    alert("Login berhasil! Selamat datang Egi Ardiansah");
+  } else {
+    alert("Username atau Password salah!");
+  }
+}
+</script>
+
+</body>
+</html>
