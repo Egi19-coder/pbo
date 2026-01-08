@@ -2,12 +2,12 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>UAS Login Pixel</title>
+<title>UAS Login Pixel Estetik</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 <style>
-/* ===== BODY (PIXEL BACKGROUND) ===== */
+/* ===== BODY : PIXEL WORLD ===== */
 body {
   font-family: 'Press Start 2P', cursive;
   margin: 0;
@@ -16,23 +16,49 @@ body {
   justify-content: center;
   align-items: center;
 
-  /* PIXEL SKY + GROUND */
   background:
-    /* CLOUDS */
+    /* CLOUD LAYER 1 */
     repeating-linear-gradient(
       90deg,
-      rgba(255,255,255,0.5) 0 20px,
-      transparent 20px 60px
-    ) 0 40px / 200px 40px no-repeat,
+      rgba(255,255,255,0.6) 0 18px,
+      transparent 18px 60px
+    ) 0 60px / 260px 40px no-repeat,
 
-    /* SKY */
+    /* CLOUD LAYER 2 */
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.35) 0 14px,
+      transparent 14px 80px
+    ) 0 120px / 320px 30px no-repeat,
+
+    /* MOUNTAIN */
     linear-gradient(
-      #6EC6FF 0%,
-      #6EC6FF 55%,
-      #5BAF3C 55%,
-      #5BAF3C 60%,
-      #8B5A2B 60%,
+      135deg,
+      transparent 45%,
+      #6B6B6B 45% 55%,
+      transparent 55%
+    ) bottom / 100% 40% no-repeat,
+
+    /* SKY + GROUND */
+    linear-gradient(
+      #78C9FF 0%,
+      #78C9FF 45%,
+      #6ECF68 45%,
+      #6ECF68 52%,
+      #8B5A2B 52%,
       #8B5A2B 100%
+    ),
+
+    /* PIXEL GRID */
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.08) 0 1px,
+      transparent 1px 16px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.08) 0 1px,
+      transparent 1px 16px
     );
 
   image-rendering: pixelated;
@@ -40,28 +66,28 @@ body {
 
 /* ===== LOGIN BOX ===== */
 .login-container {
-  background-color: rgba(139, 90, 43, 0.95); /* dirt block */
-  padding: 25px;
-  width: 330px;
-  border: 4px solid #3B2F1E;
-  box-shadow: 6px 6px 0 #000;
+  background-color: rgba(120, 72, 32, 0.95);
+  padding: 26px;
+  width: 340px;
+  border: 4px solid #2E1C10;
+  box-shadow: 8px 8px 0 #000;
 }
 
 /* ===== TITLE ===== */
 .login-container h2 {
   text-align: center;
-  color: #00FF00;
+  color: #00FF66;
   font-size: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 /* ===== INPUT ===== */
 .login-container input {
   width: 100%;
   padding: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   border: 3px solid #000;
-  background-color: #C2F0C2;
+  background-color: #C9F2C9;
   font-size: 10px;
 }
 
@@ -73,19 +99,19 @@ body {
   font-size: 10px;
   cursor: pointer;
   box-shadow: 4px 4px 0 #000;
-  background-color: #4CAF50;
+  background-color: #3CB371;
 }
 
 .login-container button:hover {
-  background-color: #3E8E41;
+  background-color: #2E8B57;
 }
 
 /* ===== INFO ===== */
 .user-info {
   display: none;
-  margin-top: 15px;
-  padding: 15px;
-  background-color: #87CEEB;
+  margin-top: 16px;
+  padding: 14px;
+  background-color: #9AD9FF;
   border: 3px solid #000;
   text-align: center;
   font-size: 10px;
@@ -126,4 +152,3 @@ function login() {
 
 </body>
 </html>
-
